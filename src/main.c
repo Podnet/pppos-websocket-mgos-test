@@ -4,7 +4,27 @@
 #include "mgos_net.h"
 #include "mg_rpc_channel_tcp_common.h"
 
-static void sum_cb(struct mg_rpc_request_info *ri, void *cb_arg,
+
+
+/*! \mainpage PPPOS websocket
+ *
+ * \section Documentation
+ *
+ * Add some intro to docs:
+ *
+ * \section install_sec Steps to install:
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
+
+
+
+
+/**> Function to get sum using rpc command. */
+void sum_cb(struct mg_rpc_request_info *ri, void *cb_arg,
                    struct mg_rpc_frame_info *fi, struct mg_str args)
 {
     LOG(LL_INFO, ("executing timer code"));
@@ -21,7 +41,8 @@ static void sum_cb(struct mg_rpc_request_info *ri, void *cb_arg,
     (void)fi;
 }
 
-static void send_data_to_server_cb(void *arg)
+/**> Function to send data over to server. */
+void send_data_to_server_cb(void *arg)
 {
     LOG(LL_INFO, ("Preparing to send data to server"));
     // struct mg_rpc_call_opts opts = {.dst = mg_mk_str("ws://192.168.0.104:5000")};
@@ -53,7 +74,9 @@ static void send_data_to_server_cb(void *arg)
     (void)arg;
 }
 
-static void connect_to_ws_cb(int ev, void *ev_data, void *userdata)
+
+/**> Function to connect to websocket. */
+void connect_to_ws_cb(int ev, void *ev_data, void *userdata)
 {
     LOG(LL_INFO, ("We are connected to the internet."));
     struct mg_rpc_call_opts opts = {.dst = mg_mk_str("ws://68.183.90.153:5000")};
@@ -65,6 +88,8 @@ static void connect_to_ws_cb(int ev, void *ev_data, void *userdata)
     (void)userdata;
 }
 
+
+/**> MongooseOS initialization function to setup websocket. */
 enum mgos_app_init_result mgos_app_init(void)
 {
     mgos_usleep(5000);
