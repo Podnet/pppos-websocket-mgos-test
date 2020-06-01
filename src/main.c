@@ -8,15 +8,11 @@
 
 /*! \mainpage PPPOS websocket
  *
- * \section Documentation
+ * \section Documentation 
  *
- * Add some intro to docs:
+ * This is a test app for PPPOS connection with websocket to run on mongoose OS.
  *
- * \section install_sec Steps to install:
  *
- * \subsection step1 Step 1: Opening the box
- *
- * etc...
  */
 
 
